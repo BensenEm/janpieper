@@ -6,7 +6,6 @@
 
 # Professors
 - Update Pictures to higher resolution
-- Add HTML Markup for CV on right side with overflow:scroll
 - Add fixed height for containers
 - (Add arrows on small screens aswell)
 - (Add linkedIn link)
