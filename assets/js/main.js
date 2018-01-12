@@ -61,8 +61,8 @@ $(document).ready(function($) {
 		  infinite: true,
 		  autoplay: false,
 	  	autoplaySpeed: 2000,
-	  	nextArrow: '<span class="next"><i class="ion-ios-arrow-right"></i></span>',
-	  	prevArrow: '<span class="prev"><i class="ion-ios-arrow-left"></i></span>',
+	  	nextArrow: '<span class="next"><i class="flaticon flaticon-next"></i></span>',
+	  	prevArrow: '<span class="prev"><i class="flaticon flaticon-back"></i></span>',
 	  	arrows: true,
 	  	draggable: false,
 	  	adaptiveHeight: true
@@ -75,8 +75,8 @@ $(document).ready(function($) {
 		  infinite: true,
 		  autoplay: true,
 	  	autoplaySpeed: 2000,
-	  	nextArrow: '<span class="next"><i class="ion-ios-arrow-right"></i></span>',
-	  	prevArrow: '<span class="prev"><i class="ion-ios-arrow-left"></i></span>',
+	  	nextArrow: '<span class="next"><i class="flaticon flaticon-next"></i></span>',
+	  	prevArrow: '<span class="prev"><i class="flaticon flaticon-back"></i></span>',
 	  	arrows: false,
 	  	draggable: false
 		});
@@ -91,8 +91,8 @@ $(document).ready(function($) {
 	  	autoplaySpeed: 2000,
 
 		  arrows: true,
-		  nextArrow: '<span class="next"><i class="ion-ios-arrow-right"></i></span>',
-	  	prevArrow: '<span class="prev"><i class="ion-ios-arrow-left"></i></span>',
+			nextArrow: '<span class="next"><i class="flaticon flaticon-next"></i></span>',
+	  	prevArrow: '<span class="prev"><i class="flaticon flaticon-back"></i></span>',
 	  	draggable: false,
 	  	responsive: [
 		    {
@@ -138,6 +138,46 @@ $(document).ready(function($) {
 		  centerPadding: "0px",
 		  focusOnSelect: true,
 		  arrows: false
+		});
+
+		$('.slider-for').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			arrows: false,
+			fade: true,
+			asNavFor: '.slider-nav',
+			responsive: [{							
+				breakpoint: 768,
+				settings: "unslick"						
+			}] 
+		
+		});
+		$('.slider-nav').slick({
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			asNavFor: '.slider-for',
+			dots: false,
+			arrows: true,
+			nextArrow: '<span class="next"><i class=" flaticon-next" ></i></span>',
+	  	prevArrow: '<span class="prev"><i class=" flaticon-back"></i></span>',
+			centerMode: true,
+			focusOnSelect: true,
+			 // the magic
+  responsive: [{
+		
+					breakpoint: 991,
+					settings: {
+						slidesToShow: 2,
+						infinite: true
+					}
+		
+				}, {
+		
+					breakpoint: 768,
+					settings: "unslick"
+					
+		
+				}] 
 		});
 
 		$('.js-pb_slider_content2').slick({

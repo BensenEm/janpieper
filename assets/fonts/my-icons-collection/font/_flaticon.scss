@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 09/01/2018 17:33
+    Creation date: 12/01/2018 11:16
     */
 
     @font-face {
@@ -36,24 +36,28 @@
   font-smoothing: antialiased;
     }
 
-    .flaticon-24-hours:before { content: "\f100"; }
-.flaticon-wallet:before { content: "\f101"; }
-.flaticon-team:before { content: "\f102"; }
-.flaticon-rocket:before { content: "\f103"; }
-.flaticon-flask:before { content: "\f104"; }
-.flaticon-mortarboard:before { content: "\f105"; }
-.flaticon-medal:before { content: "\f106"; }
-.flaticon-school:before { content: "\f107"; }
-.flaticon-profile:before { content: "\f108"; }
-.flaticon-network:before { content: "\f109"; }
+    .flaticon-back:before { content: "\f100"; }
+.flaticon-next:before { content: "\f101"; }
+.flaticon-24-hours:before { content: "\f102"; }
+.flaticon-wallet:before { content: "\f103"; }
+.flaticon-team:before { content: "\f104"; }
+.flaticon-rocket:before { content: "\f105"; }
+.flaticon-flask:before { content: "\f106"; }
+.flaticon-mortarboard:before { content: "\f107"; }
+.flaticon-medal:before { content: "\f108"; }
+.flaticon-school:before { content: "\f109"; }
+.flaticon-profile:before { content: "\f10a"; }
+.flaticon-network:before { content: "\f10b"; }
     
-    $font-Flaticon-24-hours: "\f100";
-    $font-Flaticon-wallet: "\f101";
-    $font-Flaticon-team: "\f102";
-    $font-Flaticon-rocket: "\f103";
-    $font-Flaticon-flask: "\f104";
-    $font-Flaticon-mortarboard: "\f105";
-    $font-Flaticon-medal: "\f106";
-    $font-Flaticon-school: "\f107";
-    $font-Flaticon-profile: "\f108";
-    $font-Flaticon-network: "\f109";
+    $font-Flaticon-back: "\f100";
+    $font-Flaticon-next: "\f101";
+    $font-Flaticon-24-hours: "\f102";
+    $font-Flaticon-wallet: "\f103";
+    $font-Flaticon-team: "\f104";
+    $font-Flaticon-rocket: "\f105";
+    $font-Flaticon-flask: "\f106";
+    $font-Flaticon-mortarboard: "\f107";
+    $font-Flaticon-medal: "\f108";
+    $font-Flaticon-school: "\f109";
+    $font-Flaticon-profile: "\f10a";
+    $font-Flaticon-network: "\f10b";
