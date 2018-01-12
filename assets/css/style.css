@@ -1693,7 +1693,7 @@ a {
     .pb_slide_v2 .slide_content > .pb_content-media {
       height: 350px; } }
   .pb_slide_v2 .slide_content > .pb_content-media, .pb_slide_v2 .slide_content .slide_content-text {
-    width: 50%; }
+    width: 100%; }
    
     @media (max-width: 991px) {
       .pb_slide_v2 .slide_content > .pb_content-media, .pb_slide_v2 .slide_content .slide_content-text {
