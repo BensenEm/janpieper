@@ -1605,8 +1605,8 @@ a {
   .pb_media_v1 > .icon i,
   .pb_media_v2 > .icon i {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 40%;
+    left: 40%;
     -webkit-transform: translateY(-50%) translateX(-50%);
     -ms-transform: translateY(-50%) translateX(-50%);
     transform: translateY(-50%) translateX(-50%); }
@@ -1733,3 +1733,4 @@ a {
 
 .prof_sub_slider{
 }
+
