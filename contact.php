@@ -40,6 +40,7 @@ try
     if(count($_POST) == 0) throw new \Exception('Form is empty');
     
     $emailText = "You have a new message from your contact form\n=============================\n";
+    $errorMessage = "nothing :/";
 
     foreach ($_POST as $key => $value) {
         // If the field exists in the $fields array, include it in the email 
