@@ -37,6 +37,7 @@ $_POST = json_decode($rest_json, true);
 try
 {
     
+    $errorMessage = "... :/";
     if(count($_POST) == 0) throw new \Exception('Form is empty');
     
     $emailText = "You have a new message from your contact form\n=============================\n";
