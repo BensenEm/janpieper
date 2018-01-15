@@ -37,17 +37,17 @@ try
 {
     
     $errorMessage = "... :/" . count($_POST);
-    if(count($_POST) == 0) throw new \Exception('Form is empty');
+    // if(count($_POST) == 0) throw new \Exception('Form is empty');
     
     $emailText = new SendGrid\Content("text/plain", "You have a new message from your contact form\n=============================\n");
     $errorMessage = "nothing :/";
 
-    foreach ($_POST as $key => $value) {
-        // If the field exists in the $fields array, include it in the email 
-        if (isset($fields[$key])) {
-            $emailText .= "$fields[$key]: $value\n";
-        }
-    }
+    // foreach ($_POST as $key => $value) {
+    //    // If the field exists in the $fields array, include it in the email 
+    //    if (isset($fields[$key])) {
+    //        $emailText .= "$fields[$key]: $value\n";
+    //    }
+    //}
 
     // All the neccessary headers for the email.
     // $headers = array('Content-Type: text/plain; charset="UTF-8";',
