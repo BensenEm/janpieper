@@ -36,8 +36,8 @@ error_reporting(E_ALL & ~E_NOTICE);
 try
 {
     
-    $errorMessage = "... :/";
-    // if(count($_POST) == 0) throw new \Exception('Form is empty');
+    $errorMessage = "... :/" . $_POST;
+    if(count($_POST) == 0) throw new \Exception('Form is empty');
     
     $emailText = new SendGrid\Content("text/plain", "You have a new message from your contact form\n=============================\n");
     $errorMessage = "nothing :/";
