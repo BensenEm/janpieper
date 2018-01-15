@@ -42,7 +42,7 @@ try
             "text/plain", 
             "You have a new message from your contact form\n
             =============================\n
-            Name: $_POST['name']");
+            Name:" . $_POST['name']);
 
     // Send email
     $mail = new SendGrid\Mail($from, $subject, $sendTo, $emailText);
