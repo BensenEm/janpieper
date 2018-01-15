@@ -1,15 +1,17 @@
 <?php
+
+require 'vendor/autoload.php';
 /*
  *  CONFIGURE EVERYTHING HERE
  */
 
 // an email address that will be in the From field of the email.
 // $from = 'Demo contact form <demo@domain.com>';
-$from = 'sa.bussian@gmail.com';
+$from = new SendGrid\Email(null, 'sa.bussian@gmail.com');
 
 // an email address that will receive the email with the output of the form
 // $sendTo = 'Demo contact form <demo@domain.com>';
-$sendTo = 'shubosha.kuro@gmail.com';
+$sendTo = new SendGrid\Email(null, 'shubosha.kuro@gmail.com');
 
 // subject of the email
 $subject = 'New message from contact form';
@@ -37,7 +39,7 @@ try
     $errorMessage = "... :/";
     // if(count($_POST) == 0) throw new \Exception('Form is empty');
     
-    $emailText = "You have a new message from your contact form\n=============================\n";
+    $emailText = new SendGrid\Content("text/plain", "You have a new message from your contact form\n=============================\n");
     $errorMessage = "nothing :/";
 
     foreach ($_POST as $key => $value) {
@@ -48,15 +50,20 @@ try
     }
 
     // All the neccessary headers for the email.
-    $headers = array('Content-Type: text/plain; charset="UTF-8";',
-        'From: ' . $from,
-        'Reply-To: ' . $from,
-        'Return-Path: ' . $from,
-    );
+    // $headers = array('Content-Type: text/plain; charset="UTF-8";',
+    //    'From: ' . $from,
+    //    'Reply-To: ' . $from,
+    //    'Return-Path: ' . $from,
+    // );
     
 
     // Send email
-    mail($sendTo, $subject, $emailText, implode("\n", $headers));
+    // mail($sendTo, $subject, $emailText, implode("\n", $headers));
+    $mail = new SendGrid\Mail($from, $subject, $sendTo, $emailText);
+    $aoiKey = getenv('SENDGRID_API_KEY');
+    $sg = new \SendGrid($apiKey);
+
+    $response = $sg->client->mail()->send()->post($mail);
 
     $responseArray = array('type' => 'success', 'message' => $okMessage);
 }
