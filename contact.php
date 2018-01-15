@@ -60,7 +60,7 @@ try
     // Send email
     // mail($sendTo, $subject, $emailText, implode("\n", $headers));
     $mail = new SendGrid\Mail($from, $subject, $sendTo, $emailText);
-    $aoiKey = getenv('SENDGRID_API_KEY');
+    $apiKey = getenv('SENDGRID_API_KEY');
     $sg = new \SendGrid($apiKey);
 
     $response = $sg->client->mail()->send()->post($mail);
