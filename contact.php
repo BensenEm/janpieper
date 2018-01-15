@@ -31,12 +31,14 @@ $errorMessage = 'There was an error while submitting the form. Please try again 
 // if you are not debugging and don't need error reporting, turn this off by error_reporting(0);
 error_reporting(E_ALL & ~E_NOTICE);
 
+$rest_json = file_get_contents("php://input");
+$_POST = json_decode($rest_json, true);
+
 try
 {
     
     if(count($_POST) == 0) throw new \Exception('Form is empty');
     
-    $errorMessage = ":( all get wrong";
     $emailText = "You have a new message from your contact form\n=============================\n";
 
     foreach ($_POST as $key => $value) {
