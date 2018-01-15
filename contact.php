@@ -33,10 +33,10 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 try
 {
-    $errorMessage = ":( all get wrong";
-
+    
     if(count($_POST) == 0) throw new \Exception('Form is empty');
-            
+    
+    $errorMessage = ":( all get wrong";
     $emailText = "You have a new message from your contact form\n=============================\n";
 
     foreach ($_POST as $key => $value) {
