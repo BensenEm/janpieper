@@ -52,6 +52,8 @@ try
         'Return-Path: ' . $from,
     );
     
+    $errorMessage = ":( all get wrong"
+
     // Send email
     mail($sendTo, $subject, $emailText, implode("\n", $headers));
 
