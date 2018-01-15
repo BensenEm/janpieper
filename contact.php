@@ -35,31 +35,16 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 try
 {
-    
-    $errorMessage = "... :/" . count($_POST);
-    $okMessage .= count($_POST);
     if(count($_POST) == 0) throw new \Exception('Form is empty');
     
-    $emailText = new SendGrid\Content("text/plain", "You have a new message from your contact form\n=============================\n");
-    $errorMessage = "nothing :/";
-
-    // foreach ($_POST as $key => $value) {
-    //    // If the field exists in the $fields array, include it in the email 
-    //    if (isset($fields[$key])) {
-    //        $emailText .= "$fields[$key]: $value\n";
-    //    }
-    //}
-
-    // All the neccessary headers for the email.
-    // $headers = array('Content-Type: text/plain; charset="UTF-8";',
-    //    'From: ' . $from,
-    //    'Reply-To: ' . $from,
-    //    'Return-Path: ' . $from,
-    // );
-    
+    $emailText = 
+        new SendGrid\Content(
+            "text/plain", 
+            "You have a new message from your contact form\n
+            =============================\n
+            Name: $_POST['name']");
 
     // Send email
-    // mail($sendTo, $subject, $emailText, implode("\n", $headers));
     $mail = new SendGrid\Mail($from, $subject, $sendTo, $emailText);
     $apiKey = getenv('SENDGRID_API_KEY');
     $sg = new \SendGrid($apiKey);
