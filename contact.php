@@ -31,9 +31,6 @@ $errorMessage = 'There was an error while submitting the form. Please try again 
 // if you are not debugging and don't need error reporting, turn this off by error_reporting(0);
 error_reporting(E_ALL & ~E_NOTICE);
 
-$rest_json = file_get_contents("php://input");
-$_POST = json_decode($rest_json, true);
-
 try
 {
     
