@@ -33,6 +33,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 try
 {
+    $errorMessage = ":( all get wrong";
 
     if(count($_POST) == 0) throw new \Exception('Form is empty');
             
@@ -52,7 +53,6 @@ try
         'Return-Path: ' . $from,
     );
     
-    $errorMessage = ":( all get wrong";
 
     // Send email
     mail($sendTo, $subject, $emailText, implode("\n", $headers));
