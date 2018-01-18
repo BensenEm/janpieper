@@ -25,22 +25,28 @@ $(document).ready(function($) {
 			else {
 				$(".jprest").addClass('d-none');
 			} 
-			
-    });
+		});
+		$('.jprest').click(function(){
+			$('.jprest').addClass('d-none');
+		});
 		
 		$("#fhimage").click(function(){
 			console.log("flo");
-	 		if($(".fhrest").hasClass('d-none')){
+			if($(".fhrest").hasClass('d-none')){
 				$(".fhrest").removeClass('d-none');
 			}
 			else {
 				$(".fhrest").addClass('d-none');
-			} 
-			
-    });
+			}
+		});	
+		
+		$('.fhrest').click(function(){
+				$('.fhrest').addClass('d-none');
+		});
+		
 		$("#mmimage").click(function(){
 			console.log("malte");
-	 		if($(".mmrest").hasClass('d-none')){
+			if($(".mmrest").hasClass('d-none')){
 				$(".mmrest").removeClass('d-none');
 			}
 			else {
@@ -48,9 +54,13 @@ $(document).ready(function($) {
 			} 
 			
     });
+		$('.mmrest').click(function(){
+				$('.mmrest').addClass('d-none');
+		});
+		
 		$("#bkimage").click(function(){
 			console.log("bernd");
-	 		if($(".bkrest").hasClass('d-none')){
+			if($(".bkrest").hasClass('d-none')){
 				$(".bkrest").removeClass('d-none');
 			}
 			else {
@@ -59,9 +69,13 @@ $(document).ready(function($) {
 			
     });
 	};
+
+	$('.bkrest').click(function(){
+			$('.bkrest').addClass('d-none');
+	});
 	smallScreensImageToggle();
 
-	var largeScreensImageNav = function() {
+ var largeScreensImageNav = function() {
 		$("#jp-nav").click(function(){
 			$("#fh").addClass('d-none');
 			$("#bk").addClass('d-none');
@@ -95,7 +109,7 @@ $(document).ready(function($) {
 
 	};
 	largeScreensImageNav();
-
+ 
 	// scroll
 	var scrollWindow = function() {
 		$(window).scroll(function(){
