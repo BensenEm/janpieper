@@ -12,6 +12,11 @@ $(document).ready(function($) {
 		}, 700);
 	};
 	loader();
+	
+	if (window.matchMedia('(max-width: 767px)').matches) {
+		
+	}
+
 
 	//smallScreens image toggle
 	var smallScreensImageToggle = function(){
@@ -75,7 +80,7 @@ $(document).ready(function($) {
 	});
 	smallScreensImageToggle();
 
- var largeScreensImageNav = function() {
+ /* var largeScreensImageNav = function() {
 		$("#jp-nav").click(function(){
 			$("#fh").addClass('d-none');
 			$("#bk").addClass('d-none');
@@ -108,7 +113,7 @@ $(document).ready(function($) {
 		});
 
 	};
-	largeScreensImageNav();
+	largeScreensImageNav(); */
  
 	// scroll
 	var scrollWindow = function() {
@@ -362,7 +367,7 @@ $(document).ready(function($) {
 	//overlay
 
 	function pasteOverlay(ID){
-		$('#'+ ID).appendTo('#overlay-cv');
+		$('#'+ ID).clone().appendTo('#overlay-cv');
 		on();
 	};
 
@@ -370,5 +375,7 @@ $(document).ready(function($) {
 		document.getElementById("overlay").style.display = "block";
 	}
 	function off() {
-    document.getElementById("overlay").style.display = "none";
+		document.getElementById("overlay").style.display = "none";
+		$("#overlay-cv").empty();
+		
 }
