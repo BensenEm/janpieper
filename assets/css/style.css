@@ -1777,3 +1777,12 @@ a {
   margin:15% auto;
   max-width: 900px;
 }
+
+.fh_rest, .jp_rest, .bk_rest, .mm_rest{
+  height: 0px;
+  overflow: hidden;
+  transition: all .75s ease !important;
+}
+.full{
+  height: 400px;
+}
