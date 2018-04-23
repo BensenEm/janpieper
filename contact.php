@@ -7,24 +7,24 @@ require 'vendor/autoload.php';
 
 // an email address that will be in the From field of the email.
 // $from = 'Demo contact form <demo@domain.com>';
-$from = new SendGrid\Email(null, 'sa.bussian@gmail.com');
+$from = new SendGrid\Email(null, $_POST['email']);
 
 // an email address that will receive the email with the output of the form
 // $sendTo = 'Demo contact form <demo@domain.com>';
 $sendTo = new SendGrid\Email(null, 'shubosha.kuro@gmail.com');
 
 // subject of the email
-$subject = 'New message from contact form';
+$subject = 'Neue Nachricht von XP4U [' . $_POST['name'] . ']';
 
 // form field names and their translations.
 // array variable name => Text to appear in the email
 $fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'email' => 'Email', 'message' => 'Message'); 
 
 // message that will be displayed when everything is OK :)
-$okMessage = 'Contact form successfully submitted. Thank you, I will get back to you soon!';
+$okMessage = 'Kontakt erfolgreich hergestellt!';
 
 // If something goes wrong, we will display this message.
-$errorMessage = 'There was an error while submitting the form. Please try again later';
+$errorMessage = 'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später noch einmal';
 
 /*
  *  LET'S DO THE SENDING
@@ -39,10 +39,12 @@ try
     
     $emailText = 
         new SendGrid\Content(
-            "text/plain", 
-            "You have a new message from your contact form\n
-            =============================\n
-            Name:" . $_POST['name']);
+            "text/html", 
+            "<i>Eine neue Nachricht ist von XP4U.de eingetroffen.<\i>\n
+            <hr/>\n
+            <b>Name:</b> " . $_POST['name'] . "<br/>" .
+            "<b>Email:</b> " . $_POST['email'] . "<br/>" . 
+            "<b>Nachricht:</b> " . $_POST['message'] . "<br/>");
 
     // Send email
     $mail = new SendGrid\Mail($from, $subject, $sendTo, $emailText);
@@ -69,5 +71,5 @@ if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
 }
 // else just display the message
 else {
-    echo $responseArray['message'];
+    echo "<script>document.getElementById('contactResult').innerHTML += ". $responseArray['message'] . ";</script>";
 }
